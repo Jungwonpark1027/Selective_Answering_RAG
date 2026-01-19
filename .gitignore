@@ -1,0 +1,13 @@
+# Large artifacts
+ckpt/
+results/
+
+# Data: ignore all, but allow small scripts/docs if needed
+data/*
+!data/make_splits_by_qid.py
+!data/README.md
+
+# Python
+__pycache__/
+*.pyc
+.env
