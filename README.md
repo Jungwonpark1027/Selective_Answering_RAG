@@ -9,6 +9,21 @@ Retrieval-Augmented Generation (RAG) systems heavily rely on retrieved documents
 
 To address this, we propose **Selective RAG**, a framework that trains the model to distinguish between situations where it should generate an answer and where it should abstain (reject) based on the presence of evidence in the provided documents. Our method significantly reduces hallucinations while maintaining high precision, improving Overall Accuracy by up to 10%p in noisy retrieval environments.
 
+## Training Setup Comparison
+
+<p align="center">
+  <img src="assets/selective_rag_overview.png" alt="Comparison of Baseline, Answer-Only RAG, and Selective RAG" width="900"/>
+</p>
+
+**Figure.** Comparison of the three settings used in this work: **(1) Baseline**, **(2) Answer-Only RAG**, and **(3) Selective RAG**.
+
+- In our formulation, each input consists of a query and a retrieved document set, where the set is either **answerable** (contains at least one evidence document) or **unanswerable** (contains no evidence document).
+- **Answer-Only RAG** and **Selective RAG** are trained with the same input format, but differ in the target behavior when no supporting evidence is present.
+- **Answer-Only RAG** is trained to always generate an answer, whereas **Selective RAG** is trained to answer only when evidence exists and to abstain otherwise (e.g., outputting *"모르겠습니다"* / *"I don't know"*).
+- This distinction is the core of our method: learning **evidence-aware selective answering** rather than unconditional answer generation.
+
+As discussed in the paper, this selective behavior reduces hallucination under noisy retrieval and leads to more robust performance across varying evidence-presence conditions.
+
 ## Repository Structure
 ```text
 .
