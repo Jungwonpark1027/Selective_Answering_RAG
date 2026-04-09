@@ -12,7 +12,7 @@ To address this, we propose **Selective RAG**, a framework that trains the model
 ## Training Setup Comparison
 
 <p align="center">
-  <img src="assets/selective_rag_overview.png" alt="Comparison of Baseline, Answer-Only RAG, and Selective RAG" width="900"/>
+  <img src="selective_rag_overview.png" alt="Comparison of Baseline, Answer-Only RAG, and Selective RAG" width="900"/>
 </p>
 
 **Figure.** Comparison of the three settings used in this work: **(1) Baseline**, **(2) Answer-Only RAG**, and **(3) Selective RAG**.
